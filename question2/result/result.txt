@@ -1,0 +1,25 @@
+Assignment-1
+
+Q2: Explain what kind analysis has become easier with each of the visualizations.
+        The visualizations provide valuable insights into student performance across various factors. The math scores distribution histogram helps identify the spread, concentration, and outliers in students' math scores, offering a clear view of overall performance. The gender score comparison bar chart allows for an easy comparison of average math, reading, and writing scores between male and female students, highlighting any gender-based performance differences. Similarly, the test preparation impact chart shows how students who completed a test preparation course generally perform better across all subjects, demonstrating the effectiveness of the course. The parental education vs. student performance bar chart reveals a correlation between parental education levels and student scores, indicating that students with more educated parents tend to achieve higher scores. Lastly, the race/ethnicity performance radar plot enables comparison of scores across different racial/ethnic groups, making it easier to spot trends and disparities in academic achievement across subjects. Together, these visualizations simplify the analysis of demographic, preparatory, and parental factors affecting student success.
+
+Visualizations:
+
+  
+ 
+
+ 
+  
+  
+ 
+
+  
+
+
+ 
+
+ 
+
+
+
+ 
