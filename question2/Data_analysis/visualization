@@ -1,0 +1,119 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data (replace with your actual data)
+math_scores = [72, 69, 90, 47, 76, 71, 88, 40, 64, 38, 58, 40, 65, 78, 50, 69, 88, 18, 46, 54, 66, 65, 44, 69, 74, 73, 69, 67, 70, 62, 69]
+
+def plot_math_scores_distribution():
+    plt.figure(figsize=(10, 6))
+    plt.hist(math_scores, bins=10, edgecolor='black')
+    plt.title('Distribution of Math Scores')
+    plt.xlabel('Math Score')
+    plt.ylabel('Frequency')
+    plt.savefig('visualizations/math_scores_distribution.png')
+    plt.close()
+
+def plot_gender_score_comparison():
+    genders = ['Female', 'Male']
+    math_scores = [65, 68]
+    reading_scores = [72, 65]
+    writing_scores = [70, 63]
+
+    x = np.arange(len(genders))
+    width = 0.25
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.bar(x - width, math_scores, width, label='Math')
+    ax.bar(x, reading_scores, width, label='Reading')
+    ax.bar(x + width, writing_scores, width, label='Writing')
+
+    ax.set_ylabel('Average Score')
+    ax.set_title('Average Scores by Gender')
+    ax.set_xticks(x)
+    ax.set_xticklabels(genders)
+    ax.legend()
+
+    plt.tight_layout()
+    plt.savefig('visualizations/gender_score_comparison.png')
+    plt.close()
+
+def plot_test_prep_impact():
+    prep_status = ['Completed', 'None']
+    math_scores = [75, 65]
+    reading_scores = [80, 70]
+    writing_scores = [78, 68]
+
+    x = np.arange(len(prep_status))
+    width = 0.25
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.bar(x - width, math_scores, width, label='Math')
+    ax.bar(x, reading_scores, width, label='Reading')
+    ax.bar(x + width, writing_scores, width, label='Writing')
+
+    ax.set_ylabel('Average Score')
+    ax.set_title('Impact of Test Preparation on Scores')
+    ax.set_xticks(x)
+    ax.set_xticklabels(prep_status)
+    ax.legend()
+
+    plt.tight_layout()
+    plt.savefig('visualizations/test_prep_impact.png')
+    plt.close()
+
+def plot_parental_education_scores():
+    education_levels = ["Some high school", "High school", "Some college", "Associate's degree", "Bachelor's degree", "Master's degree"]
+    average_scores = [60, 65, 70, 75, 80, 85]
+
+    plt.figure(figsize=(12, 6))
+    plt.bar(education_levels, average_scores)
+    plt.title('Average Scores by Parental Education Level')
+    plt.xlabel('Parental Education Level')
+    plt.ylabel('Average Score')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.savefig('visualizations/parental_education_scores.png')
+    plt.close()
+
+def plot_race_ethnicity_performance():
+    groups = ['A', 'B', 'C', 'D', 'E']
+    math_scores = [70, 65, 75, 68, 72]
+    reading_scores = [72, 70, 78, 73, 75]
+    writing_scores = [71, 68, 76, 70, 74]
+
+    angles = np.linspace(0, 2*np.pi, len(groups), endpoint=False)
+
+    fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(projection='polar'))
+
+    ax.plot(angles, math_scores, 'o-', linewidth=2, label='Math')
+    ax.fill(angles, math_scores, alpha=0.25)
+    ax.plot(angles, reading_scores, 'o-', linewidth=2, label='Reading')
+    ax.fill(angles, reading_scores, alpha=0.25)
+    ax.plot(angles, writing_scores, 'o-', linewidth=2, label='Writing')
+    ax.fill(angles, writing_scores, alpha=0.25)
+
+    ax.set_thetagrids(angles * 180/np.pi, groups)
+    ax.set_title('Performance Across Different Race/Ethnicity Groups')
+    ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.0))
+
+    plt.tight_layout()
+    plt.savefig('visualizations/race_ethnicity_performance.png')
+    plt.close()
+
+def main():
+    # Create visualizations folder if it doesn't exist
+    import os
+    if not os.path.exists('visualizations'):
+        os.makedirs('visualizations')
+
+    # Generate all visualizations
+    plot_math_scores_distribution()
+    plot_gender_score_comparison()
+    plot_test_prep_impact()
+    plot_parental_education_scores()
+    plot_race_ethnicity_performance()
+
+    print("All visualizations have been generated and saved in the 'visualizations' folder.")
+
+if __name__ == "__main__":
+    main()
